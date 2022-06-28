@@ -27,6 +27,8 @@ jobs:
     - env:
         DB_CONNECT: ${{secrets.DB_CONNECT}}
         TOKEN_SECRET: ${{secrets.TOKEN_SECRET}}
+      run: export
+    - run: env
     - run: npm ci
     - run: npm run build --if-present
         
