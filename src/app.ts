@@ -10,13 +10,15 @@ import { router as authRoute } from './routes/auth';
 import { router as orderRoute } from './routes/order';
 
 interface ENV {
-    DB_CONNECT: string | undefined;
-    TOKEN_SECRET: string | undefined;
+    DB_CONNECT: string | object;
+    TOKEN_SECRET: string | object;
 }
 
 // connect db
 // mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('connect to db'));
+// mongoose.connect(process.env.DB_CONNECT, () => console.log('connect to db'));
 mongoose.connect(process.env.DB_CONNECT, () => console.log('connect to db'));
+
 
 
 // middleware
