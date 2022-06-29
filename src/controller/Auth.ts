@@ -54,7 +54,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
 
     // create a token
     if (user && validPass) {
-        const token = jwt.sign({ name: user.name }, process.env.TOKEN_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ name: user.name }, process.env.TOKEN_SECRET!, { expiresIn: '1h' });
         res.header('auth-token', token).send(token);
     }
 
